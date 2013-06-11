@@ -29,7 +29,60 @@
                 </StackPanel>
             </phone:Pivot.Title>
 			<!--Pivot item one-->
-			<phone:PivotItem Header="questions">
+
+            <phone:PivotItem Header="profile">
+                <Grid HorizontalAlignment="Left" Height="594" VerticalAlignment="Top" Width="456">
+                	<StackPanel Orientation="Vertical">
+                		<Grid>
+                			<Grid.RowDefinitions>
+                				<RowDefinition Height="*"/>
+                			</Grid.RowDefinitions>
+                			<Grid.ColumnDefinitions>
+                				<ColumnDefinition Width="Auto" />
+                				<ColumnDefinition Width="*" />
+                			</Grid.ColumnDefinitions>
+                			<StackPanel Grid.RowSpan="3" Margin="0,0,10,0" toolkit:TiltEffect.SuppressTilt="True">
+                				<Image HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="128" Source="{Binding User.ProfileImageLoc}"/>
+                				<Button Content="follow"/>
+                			</StackPanel>
+                			<StackPanel Margin="0" Grid.Column="1" toolkit:TiltEffect.SuppressTilt="True">
+                				<TextBlock TextWrapping="Wrap" Text="{Binding User.Name}" Style="{StaticResource JumpListStringStyle}"/>
+                				<StackPanel Orientation="Horizontal" Margin="0,-8,0,0" Grid.Column="1" Grid.Row="1" toolkit:TiltEffect.SuppressTilt="True">
+                					<TextBlock TextWrapping="Wrap" Text="@" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
+                					<TextBlock TextWrapping="Wrap" Text="{Binding User.Alias}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
+                				</StackPanel>
+                				<TextBlock TextWrapping="Wrap" Text="{Binding User.Bio}" Margin="0" Foreground="#FFDDDDDD"/>
+                			</StackPanel>
+
+                		</Grid>
+                		<Grid Margin="0,20,0,0">
+                			<Grid.RowDefinitions>
+                				<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+                			<StackPanel Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="27" VerticalAlignment="Top" Foreground="{StaticResource PhoneAccentBrush}"/>
+                				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="questions" VerticalAlignment="Top" Margin="0,-8,0,0"/>
+                			</StackPanel>
+							<StackPanel Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+                				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="49" VerticalAlignment="Top" Foreground="{StaticResource PhoneAccentBrush}"/>
+                				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="answers" VerticalAlignment="Top" Margin="0,-8,0,0"/>
+                			</StackPanel>
+							<StackPanel Margin="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Foreground="{StaticResource PhoneAccentBrush}"/>
+                				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="followers" VerticalAlignment="Top" Margin="0,-8,0,0"/>
+                			</StackPanel>
+                		</Grid>
+                	</StackPanel>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="questions">
                 <Grid>
                     <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding QuestionsAsked}" ItemTemplate="{StaticResource AnsweredQuestion}">
                     </phone:LongListSelector>

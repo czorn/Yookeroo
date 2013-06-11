@@ -61,6 +61,23 @@ namespace Yookeroo.Models
             }
         }
 
+        private string _bio;
+        public string Bio
+        {
+            get
+            {
+                return _bio;
+            }
+            set
+            {
+                if (this._bio != value)
+                {
+                    this._bio = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
 
         private string _email;
         public string Email
