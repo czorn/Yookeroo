@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:ViewModels="clr-namespace:Yookeroo.ViewModels"
+    x:Class="Yookeroo.UserPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+	<phone:PhoneApplicationPage.DataContext>
+		<ViewModels:UserViewModel/>
+	</phone:PhoneApplicationPage.DataContext>
+<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<!--Pivot Control-->
+		<phone:Pivot>
+            <phone:Pivot.Title>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding User.ProfileImageLoc}" Width="40" Height="40" />
+                    <TextBlock Text="{Binding User.Name}" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </phone:Pivot.Title>
+			<!--Pivot item one-->
+			<phone:PivotItem Header="questions">
+                <Grid>
+                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding QuestionsAsked}" ItemTemplate="{StaticResource AnsweredQuestion}">
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PivotItem>
+
+			<!--Pivot item two-->
+			<phone:PivotItem Header="answers">
+				<Grid/>
+			</phone:PivotItem>
+
+            <phone:PivotItem Header="followers">
+                <Grid>
+                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding Followers}" ItemTemplate="{StaticResource UserList}" toolkit:TiltEffect.IsTiltEnabled="True">
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="following">
+                <Grid>
+                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding Followers}" ItemTemplate="{StaticResource UserList}" toolkit:TiltEffect.IsTiltEnabled="True">
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+	</Grid>
+    
+</phone:PhoneApplicationPage>
