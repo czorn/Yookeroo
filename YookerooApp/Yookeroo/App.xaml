@@ -43,7 +43,7 @@
                 	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="about 5 min ago" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="17.333" Margin="0,-5,0,0"/>
                 </StackPanel>
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
-                <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3"/>
+                <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3" Click="OnAnswerQuestion_Click"/>
             </Grid>
         </DataTemplate>
 
@@ -93,6 +93,30 @@
                         <TextBlock TextWrapping="Wrap" Text="@" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
                         <TextBlock TextWrapping="Wrap" Text="{Binding Alias}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
                     </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="UserListBio">
+            <Grid Margin="0,10,0,0" Tap="OnUserTapped" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.RowSpan="2" Margin="0,0,10,0" toolkit:TiltEffect.SuppressTilt="True">
+                    <Image HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="55" Source="{Binding ProfileImageLoc}"/>
+                </StackPanel>
+                <StackPanel Margin="0" Grid.Column="1" toolkit:TiltEffect.SuppressTilt="True">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Name}" Style="{StaticResource JumpListStringStyle}"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-8,0,0" Grid.Column="1" Grid.Row="1" toolkit:TiltEffect.SuppressTilt="True">
+                        <TextBlock TextWrapping="Wrap" Text="@" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Alias}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Bio}" Foreground="#FFDDDDDD" Margin="0"/>
                 </StackPanel>
 
             </Grid>

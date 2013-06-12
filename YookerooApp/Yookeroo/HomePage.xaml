@@ -51,9 +51,18 @@
             </phone:PanoramaItem>
 
             <phone:PanoramaItem Header="discover">
-                <StackPanel Orientation="Vertical">
-            		<TextBox TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Height="70"/>
-            	</StackPanel>
+                <Grid>
+                    <phone:LongListSelector Margin="0" ItemsSource="{Binding SuggestedPeople}" ItemTemplate="{StaticResource UserListBio}">
+						<phone:LongListSelector.ListHeaderTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Vertical">
+            						<TextBox TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Height="70"/>
+									<TextBlock Text="people you may know" Style="{StaticResource PhoneTextLargeStyle}" Margin="0,0,0,10"/>
+								</StackPanel>
+							</DataTemplate>
+						</phone:LongListSelector.ListHeaderTemplate>
+					</phone:LongListSelector>
+            	</Grid>
             </phone:PanoramaItem>
         </phone:Panorama>
     </Grid>

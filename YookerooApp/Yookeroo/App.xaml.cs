@@ -233,5 +233,10 @@ namespace Yookeroo
         {
             (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/UserPage.xaml", UriKind.Relative));
         }
+
+        private void OnAnswerQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/QuestionPage.xaml", UriKind.Relative));
+        }
     }
 }
