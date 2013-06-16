@@ -10,14 +10,14 @@ using Microsoft.Phone.Shell;
 
 namespace Yookeroo
 {
-    public partial class HomePage : PhoneApplicationPage
+    public partial class GroupPage : PhoneApplicationPage
     {
-        public HomePage()
+        public GroupPage()
         {
             InitializeComponent();
         }
 
-        private void livetileImage_Loaded(object sender, RoutedEventArgs e)
+        private void Panorama_Loaded_1(object sender, RoutedEventArgs e)
         {
 
         }

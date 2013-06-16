@@ -46,3 +46,29 @@ C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.d
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.pdb
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\XapCacheFile.xml
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.csprojResolveAssemblyReference.cache
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Yookeroo.dll
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Yookeroo.pdb
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\AppManifest.xaml
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Yookeroo_Debug_AnyCPU.xap
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.csprojResolveAssemblyReference.cache
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\App.g.cs
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\HomePage.g.cs
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\MainPage.g.cs
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\QuestionPage.g.cs
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\UserPage.g.cs
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.g.resources
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.Resources.AppResources.resources
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.csproj.GenerateResource.Cache
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.dll
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.pdb
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\XapCacheFile.xml
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\GroupPage.g.cs
+C:\Users\Amy Tsai\Developer\Yookeroo\Yookeroo\YookerooApp\Yookeroo\obj\Debug\GroupLiveTile.g.cs

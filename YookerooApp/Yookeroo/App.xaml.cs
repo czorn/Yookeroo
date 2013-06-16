@@ -26,6 +26,7 @@ namespace Yookeroo
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
+        /// 
         public App()
         {
             // Global handler for uncaught exceptions.
@@ -57,6 +58,8 @@ namespace Yookeroo
                 // the application's idle detection.
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
+
+
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
@@ -234,7 +237,7 @@ namespace Yookeroo
             (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/UserPage.xaml", UriKind.Relative));
         }
 
-        private void OnAnswerQuestion_Click(object sender, RoutedEventArgs e)
+        private void OnAnswerQuestion_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/QuestionPage.xaml", UriKind.Relative));
         }

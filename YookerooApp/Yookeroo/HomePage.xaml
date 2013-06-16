@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Yookeroo"
     xmlns:ViewModels="clr-namespace:Yookeroo.ViewModels"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -23,35 +24,32 @@
         <phone:Panorama Title="{Binding Path=LocalizedResources.ApplicationTitleLowercase, Source={StaticResource LocalizedStrings}}">
 
             <!--Panorama item one-->
-            <phone:PanoramaItem Header="feed">
-                <Grid>
-                    <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}"/>
+            <phone:PanoramaItem Header="what's new">
+                <Grid Margin="0,-24,0,0">
+                	<Grid.ColumnDefinitions>
+                		<ColumnDefinition Width="Auto"/>
+                		<ColumnDefinition Width="*"/>
+                	</Grid.ColumnDefinitions>
+                    <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" Grid.ColumnSpan="2"/>
                 </Grid>
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem Header=" ">
-                <StackPanel Orientation="Vertical" Margin="0">
-                	<StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                		<Image HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="48" Source="/Assets/Design/user.png"/>
-                		<TextBlock TextWrapping="Wrap" Text="profile" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource PhoneTextTitle2Style}"/>
-                	</StackPanel>
-                	<TextBlock TextWrapping="Wrap" Text="GROUPS" Style="{StaticResource PhoneTextSmallStyle}" Margin="12,20,12,5"/>
-                	<TextBlock TextWrapping="Wrap" Text="friends" Style="{StaticResource PhoneTextTitle2Style}"/>
-                	<TextBlock TextWrapping="Wrap" Text="family" Style="{StaticResource PhoneTextTitle2Style}"/>
-                	<TextBlock TextWrapping="Wrap" Text="interns" Style="{StaticResource PhoneTextTitle2Style}"/>
-                	<TextBlock TextWrapping="Wrap" Text="University of Central Florida" Style="{StaticResource PhoneTextTitle2Style}"/>
-                </StackPanel>
+            <phone:PanoramaItem Header="my groups">
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-24,0,0" Width="420" Height="503">
+                    <local:GroupLiveTile Name="groupLiveTile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,-10,-49" Width="430" Height="200" Loaded="livetileImage_Loaded"  />
+                </Grid>
+
             </phone:PanoramaItem>
 
             <phone:PanoramaItem Header="trending">
-                <Grid>
+                <Grid Margin="0,-24,0,0">
                     <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}"/>
                 </Grid>
             </phone:PanoramaItem>
 
             <phone:PanoramaItem Header="discover">
-                <Grid>
+                <Grid Margin="0,-24,0,0">
                     <phone:LongListSelector Margin="0" ItemsSource="{Binding SuggestedPeople}" ItemTemplate="{StaticResource UserListBio}">
 						<phone:LongListSelector.ListHeaderTemplate>
 							<DataTemplate>

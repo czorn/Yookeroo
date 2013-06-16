@@ -21,29 +21,29 @@
 
 
         <DataTemplate x:Key="UnAnsweredQuestion">
-            <Grid Margin="0,0,0,10">
+            <Grid Margin="0,0,0,12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" MinWidth="96" />
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.RowSpan="3" Margin="0,0,10,0" Tap="OnUserTapped">
-                    <Image HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="55" Source="{Binding Author.ProfileImageLoc}"/>
+                <StackPanel Grid.RowSpan="2" Margin="0,0,10,0" Tap="OnUserTapped">
+                	<Image HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="84" Source="{Binding Author.ProfileImageLoc}" Margin="12,8,0,0"/>
                 </StackPanel>
                 <StackPanel Margin="0" Grid.Column="1" Tap="OnUserTapped">
                     <StackPanel Orientation="Horizontal" Margin="0" toolkit:TiltEffect.IsTiltEnabled="True">
-                		<TextBlock TextWrapping="Wrap" Text="{Binding Author.Name}" Style="{StaticResource JumpListStringStyle}"/>
+                		<TextBlock TextWrapping="Wrap" Text="{Binding Author.Name}" Style="{StaticResource JumpListStringStyle}" FontFamily="Segoe WP SemiLight" Margin="0"/>
                 		<TextBlock TextWrapping="Wrap" Text=" @" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0,5,0,0"/>
                 		<TextBlock TextWrapping="Wrap" Text="{Binding Author.Alias}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0,5,0,0"/>
                 	</StackPanel>
                 	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="about 5 min ago" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="17.333" Margin="0,-5,0,0"/>
                 </StackPanel>
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
-                <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3" Click="OnAnswerQuestion_Click"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" MaxHeight ="44" Width="1*" FontSize="14.667"/>
+                <!-- <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3" Click="OnAnswerQuestion_Click"/> -->
             </Grid>
         </DataTemplate>
 
