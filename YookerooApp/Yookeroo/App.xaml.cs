@@ -26,7 +26,7 @@ namespace Yookeroo
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
-        /// 
+
         public App()
         {
             // Global handler for uncaught exceptions.

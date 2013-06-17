@@ -175,6 +175,7 @@
   <ItemGroup>
     <Content Include="Assets\Design\IMG_0051.JPG" />
     <Content Include="Assets\Design\shoes.png" />
+    <Content Include="Assets\Design\yookeroobg.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

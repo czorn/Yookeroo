@@ -36,7 +36,7 @@
             <!--Panorama item one-->
             <phone:PanoramaItem x:Name="feed" Header="feed">
                 <Grid>
-                	<phone:LongListSelector HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="420" ItemsSource="{Binding GroupFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" />
+                	<phone:LongListSelector HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding GroupFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" />
                 </Grid>
             </phone:PanoramaItem>
 
