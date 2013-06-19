@@ -32,5 +32,10 @@ namespace Yookeroo
             Storyboard anim = (Storyboard)FindName("liveTileAnimTop");
             anim.Begin();
         }
+
+        private void OnGroupTapped(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/GroupPage.xaml", UriKind.Relative));
+        }
     }
 }

@@ -14,6 +14,9 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+    <phone:PhoneApplicationPage.Background>
+        <ImageBrush Stretch="Fill"/>
+    </phone:PhoneApplicationPage.Background>
 
     <phone:PhoneApplicationPage.DataContext>
         <ViewModels:HomeViewModel/>
@@ -22,12 +25,15 @@
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot" Background="#FF222222" >
         <phone:Panorama Title="{Binding Path=LocalizedResources.ApplicationTitleLowercase, Source={StaticResource LocalizedStrings}}">
-            <!--<phone:Panorama.Background>
-                <ImageBrush ImageSource="/Assets/Design/yookeroobg.png"/>
-            </phone:Panorama.Background>-->
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="/Assets/Design/yookeroobg2-01.png"/>
+            </phone:Panorama.Background>
 
             <!--Panorama item one-->
             <phone:PanoramaItem Header="what's new">
+                <phone:PanoramaItem.Background>
+                    <ImageBrush Stretch="Fill"/>
+                </phone:PanoramaItem.Background>
                 <Grid Margin="0,-24,0,0">
                     <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}"/>
                 </Grid>
@@ -60,6 +66,7 @@
 					</phone:LongListSelector>
             	</Grid>
             </phone:PanoramaItem>
+            
         </phone:Panorama>
     </Grid>
 

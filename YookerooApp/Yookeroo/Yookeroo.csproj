@@ -101,6 +101,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserGroup.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\User.cs" />
@@ -176,6 +177,7 @@
     <Content Include="Assets\Design\IMG_0051.JPG" />
     <Content Include="Assets\Design\shoes.png" />
     <Content Include="Assets\Design\yookeroobg.png" />
+    <Content Include="Assets\Design\yookeroobg2-01.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

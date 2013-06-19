@@ -27,7 +27,7 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <StackPanel Width="400" Height="200" VerticalAlignment="Top">
+    <StackPanel Width="400" Height="200" VerticalAlignment="Top" Tap="OnGroupTapped">
         <StackPanel Name="grid2" Width="400" Height="266">
             <StackPanel.RenderTransform>
                 <TranslateTransform x:Name="panel1" Y="0" X="0"/>
