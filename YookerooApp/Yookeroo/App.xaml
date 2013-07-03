@@ -122,6 +122,14 @@
             </Grid>
         </DataTemplate>
 
+        <shell:ApplicationBar x:Key="GlobalAppBar" IsVisible="True" IsMenuEnabled="True" BackgroundColor="Orange" ForegroundColor="White">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Ask" Click="Ask_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Settings" Click="Settings_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="My Profile" Click="MyProfile_Click" />
+                <shell:ApplicationBarMenuItem Text="My Questions" Click="MyQuestions_Click" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
 
 
 

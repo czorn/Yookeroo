@@ -91,6 +91,7 @@ namespace Yookeroo
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
+
         }
 
         // Code to execute if a navigation fails
@@ -241,5 +242,30 @@ namespace Yookeroo
         {
             (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/QuestionPage.xaml", UriKind.Relative));
         }
+
+        private void Ask_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ask flow will begin here!");
+            //Do work for your application here.
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Settings will show here!");
+            //Do work for your application here.
+        }
+
+        private void MyProfile_Click(object sender, EventArgs e)
+        {
+            (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/UserPage.xaml", UriKind.Relative));
+            //Do work for your application here.
+        }
+
+        private void MyQuestions_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Menu item 2 works!");
+            //Do work for your application here.
+        }
+
     }
 }
