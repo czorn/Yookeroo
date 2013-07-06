@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:Helper="clr-namespace:Yookeroo.Helper"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
@@ -18,6 +19,13 @@
         </Style>
         
         <local:LocalizedStrings xmlns:local="clr-namespace:Yookeroo" x:Key="LocalizedStrings"/>
+
+        <!-- Converters-->
+        <Helper:QuestionTypeDescriptionToHint x:Key="QuestionTypeDescriptionToHint"/>
+        <Helper:QuestionTypeDescriptionToName x:Key="QuestionTypeDescriptionToName"/>
+        <Helper:QuestionTypeToVisibility x:Key="QuestionTypeToVisibility"/>
+        <Helper:QuestionToOptions x:Key="QuestionToOptions"/>
+        <Helper:QuestionToImageSource x:Key="QuestionToImageSource"/>
 
 
         <DataTemplate x:Key="UnAnsweredQuestion">
@@ -121,18 +129,6 @@
 
             </Grid>
         </DataTemplate>
-
-        <shell:ApplicationBar x:Key="GlobalAppBar" IsVisible="True" IsMenuEnabled="True" BackgroundColor="Orange" ForegroundColor="White">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Ask" Click="Ask_Click" />
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Settings" Click="Settings_Click" />
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="My Profile" Click="MyProfile_Click" />
-                <shell:ApplicationBarMenuItem Text="My Questions" Click="MyQuestions_Click" />
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-
-
-
 
     </Application.Resources>
 

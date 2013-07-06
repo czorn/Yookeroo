@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Windows.Media.Imaging;
 
 namespace Yookeroo.Models
 {
@@ -61,6 +63,23 @@ namespace Yookeroo.Models
             }
         }
 
+        private BitmapImage _imageBitmap;
+        public BitmapImage ImageBitmap
+        {
+            get
+            {
+                return _imageBitmap;
+            }
+            set
+            {
+                if (this._imageBitmap != value)
+                {
+                    this._imageBitmap = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
 
         private User _author;
         public User Author
@@ -97,7 +116,7 @@ namespace Yookeroo.Models
             }
         }
 
-        private int _type;
+        private int _type = -1;
         public int Type
         {
             get
@@ -110,8 +129,55 @@ namespace Yookeroo.Models
                 {
                     this._type = value;
                     this.NotifyPropertyChanged();
+                    if (!ShowOptions())
+                        Options = new ObservableCollection<string>();
                 }
             }
+        }
+
+        private ObservableCollection<string> _options;
+        public ObservableCollection<string> Options
+        {
+            get
+            {
+                return _options;
+            }
+            set
+            {
+                if (this._options != value)
+                {
+                    this._options = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public enum Types
+        {
+            SelectOne,
+            SelectMany,
+            Open
+        }
+
+        public static List<Types> AllTypes = new List<Types>() { Types.SelectOne, Types.SelectMany, Types.Open };
+        public static List<QuestionTypeDescription> TypeDescriptions = new List<QuestionTypeDescription>()
+        {
+            new QuestionTypeDescription() { Name = "Yes / No", Hint = "Select Yes or No", Type = Types.SelectOne },
+            new QuestionTypeDescription() { Name = "Single Answer", Hint = "Select only one option", Type = Types.SelectOne },
+            new QuestionTypeDescription() { Name = "Multiple Answers", Hint = "Select one or more options", Type = Types.SelectMany },
+            new QuestionTypeDescription() { Name = "Open Answer", Hint = "Write a response", Type = Types.Open }
+        };
+
+        public Question()
+        {
+            Options = new ObservableCollection<string>();
+            Type = 0;
+            Text = "";
+        }
+
+        public bool ShowOptions()
+        {
+            return (Type == 1 || Type == 2);
         }
     }
 }
