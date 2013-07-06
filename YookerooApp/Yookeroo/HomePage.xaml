@@ -18,8 +18,12 @@
 		<ViewModels:HomeViewModel/>
 	</phone:PhoneApplicationPage.DataContext>
 <!--LayoutRoot contains the root grid where all other page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="#FF222222" >
-		<phone:Panorama Title="{Binding LocalizedResources.ApplicationTitleLowercase, Source={StaticResource LocalizedStrings}}">
+	<Grid x:Name="LayoutRoot" >
+        <phone:Panorama Title="{Binding LocalizedResources.ApplicationTitleLowercase, Source={StaticResource LocalizedStrings}}">
+        	<phone:Panorama.Background>
+                <!--<ImageBrush ImageSource="/Assets/PanoramaBackground.png"/>-->
+                <ImageBrush ImageSource="/Assets/yookeroobg2-01.png"/>
+        	</phone:Panorama.Background>
 
 			<!--Panorama item one-->
 			<phone:PanoramaItem Header="feed">
