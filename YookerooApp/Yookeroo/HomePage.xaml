@@ -13,8 +13,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False"
-    ApplicationBar = "{StaticResource GlobalAppBar}">
+    shell:SystemTray.IsVisible="False">
     
     <phone:PhoneApplicationPage.Background>
         <ImageBrush Stretch="Fill"/>
@@ -31,7 +30,6 @@
                 <ImageBrush ImageSource="/Assets/yookeroobg2-01.png"/>
         	</phone:Panorama.Background>
 
-<<<<<<< HEAD
             <!--Panorama item one-->
             <phone:PanoramaItem Header="what's new">
                 <phone:PanoramaItem.Background>
@@ -45,7 +43,7 @@
             <!--Panorama item two-->
             <phone:PanoramaItem Header="my groups">
                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-24,0,0">
-                   <local:GroupLiveTile Name="groupLiveTile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,-10,-49" Width="430" Height="200" Loaded="livetileImage_Loaded"  />
+                   <local:GroupLiveTile x:Name="groupLiveTile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,-10,-49" Width="430" Height="200" Loaded="livetileImage_Loaded"  />
                 </Grid>
             </phone:PanoramaItem>
 
