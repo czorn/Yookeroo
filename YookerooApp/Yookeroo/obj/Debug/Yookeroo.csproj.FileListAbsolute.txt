@@ -36,7 +36,8 @@ C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Microsoft.
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\App.g.cs
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\HomePage.g.cs
-C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\MainPage.g.cs
+C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\ImagePage.g.cs
+C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\NewQuestionPage.g.cs
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\QuestionPage.g.cs
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\UserPage.g.cs
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.g.resources
@@ -45,4 +46,3 @@ C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.c
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.dll
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.pdb
 C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\XapCacheFile.xml
-C:\Users\asd\Documents\GitHub\Yookeroo\YookerooApp\Yookeroo\obj\Debug\Yookeroo.csprojResolveAssemblyReference.cache

@@ -15,6 +15,16 @@ namespace Yookeroo
         public HomePage()
         {
             InitializeComponent();
+
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Buttons.Add(new ApplicationBarIconButton() { IconUri = new Uri("/Assets/Design/question.png", UriKind.Relative), Text = "ask" });
+            ApplicationBar.MenuItems.Add(new ApplicationBarMenuItem() { Text = "settings" });
+            (ApplicationBar.Buttons[0] as ApplicationBarIconButton).Click += NewQuestionButton_Click;
+        }
+
+        private void NewQuestionButton_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/NewQuestionPage.xaml", UriKind.Relative));
         }
     }
 }
