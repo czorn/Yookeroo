@@ -43,7 +43,7 @@
 
             <!--Panorama item two-->
             <phone:PanoramaItem x:Name="people" Header="people">
-                <Grid/>
+
             </phone:PanoramaItem>
         </phone:Panorama>
     </Grid>

@@ -113,5 +113,22 @@ namespace Yookeroo.Models
                 }
             }
         }
+
+        private int _numResponses;
+        public int NumResponses
+        {
+            get
+            {
+                return _numResponses;
+            }
+            set
+            {
+                if (this._numResponses != value)
+                {
+                    this._numResponses = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
     }
 }

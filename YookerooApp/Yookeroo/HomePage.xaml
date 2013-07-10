@@ -27,31 +27,38 @@
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot" Background="#FF222222" >
         <phone:Panorama Title="{Binding Path=LocalizedResources.ApplicationTitleLowercase, Source={StaticResource LocalizedStrings}}">
+            <phone:Panorama.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Design/greygeo1.png"/>
+            </phone:Panorama.Background>
 
-            <!--Panorama item one-->
-            <phone:PanoramaItem Header="what's new">
-                <phone:PanoramaItem.Background>
-                    <ImageBrush Stretch="Fill"/>
-                </phone:PanoramaItem.Background>
+
+            <!--Panorama item: Whats New-->
+            <phone:PanoramaItem Header="new" Foreground="{StaticResource PhoneAccentBrush}" Margin="0">
+                <Grid Margin="0,-24 ,0,0">
+                    <!--<StackPanel>-->
+                        <!--<Button>Ask a Question</Button>-->
+                        <!--<TextBlock Margin="10,0,0,0" FontSize="{StaticResource JumpListStringFontSize}">Feed</TextBlock>-->
+                        <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" Margin="0,0,0,26"/>
+                    <!--</StackPanel>-->
+                </Grid>
+            </phone:PanoramaItem>
+            
+            
+            <!--Panorama Item: My Questions -->
+            <phone:PanoramaItem Header="my questions" Foreground="{StaticResource PhoneAccentBrush}">
                 <Grid Margin="0,-24,0,0">
-                    <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}"/>
+                    <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource MyQuestion}"/>
                 </Grid>
             </phone:PanoramaItem>
 
-            <!--Panorama item two-->
-            <phone:PanoramaItem Header="my groups">
+            <!--Panorama  Item: Groups-->
+            <phone:PanoramaItem Header="my groups" Foreground="{StaticResource PhoneAccentBrush}">
                 <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-24,0,0">
                    <local:GroupLiveTile Name="groupLiveTile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,-10,-49" Width="430" Height="200" Loaded="livetileImage_Loaded"  />
                 </Grid>
             </phone:PanoramaItem>
-
-            <phone:PanoramaItem Header="trending">
-                <Grid Margin="0,-24,0,0">
-                    <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}"/>
-                </Grid>
-            </phone:PanoramaItem>
-
-            <phone:PanoramaItem Header="discover">
+               
+            <phone:PanoramaItem Header="discover" Foreground="{StaticResource PhoneAccentBrush}">
                 <Grid Margin="0,-24,0,0">
                     <phone:LongListSelector Margin="0" ItemsSource="{Binding SuggestedPeople}" ItemTemplate="{StaticResource UserListBio}">
 						<phone:LongListSelector.ListHeaderTemplate>

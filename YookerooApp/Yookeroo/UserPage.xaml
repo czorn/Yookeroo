@@ -23,6 +23,9 @@
 	<Grid x:Name="LayoutRoot" Background="Transparent">
 		<!--Pivot Control-->
 		<phone:Pivot>
+            <phone:Pivot.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Design/greygeo1.png"/>
+            </phone:Pivot.Background>
             <phone:Pivot.Title>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding User.ProfileImageLoc}" Width="40" Height="40" />
