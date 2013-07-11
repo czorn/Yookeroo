@@ -110,7 +110,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="GroupPage.xaml.cs">
       <DependentUpon>GroupPage.xaml</DependentUpon>
-     </Compile>
+    </Compile>
     <Compile Include="NewQuestionPage.xaml.cs">
       <DependentUpon>NewQuestionPage.xaml</DependentUpon>
     </Compile>
@@ -133,9 +133,6 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="GroupLiveTile.xaml.cs">
-      <DependentUpon>GroupLiveTile.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -170,10 +167,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GroupLiveTile.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -185,12 +178,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Design\Askit.png" />
     <Content Include="Assets\Design\greygeo1.png" />
     <Content Include="Assets\Design\IMG_0051.JPG" />
     <Content Include="Assets\Design\question.png" />
     <Content Include="Assets\Design\shoes.png" />
-    <Content Include="Assets\Design\yookeroobg.png" />
-    <Content Include="Assets\Design\yookeroobg2-01.png" />
     <Content Include="Assets\Design\barcode.png" />
     <Content Include="Assets\Design\camera.png" />
     <Content Include="Assets\Design\cancel.png" />

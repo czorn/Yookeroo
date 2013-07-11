@@ -41,6 +41,23 @@ namespace Yookeroo.ViewModels
             }
         }
 
+        private ObservableCollection<UserGroup> _myGroups;
+        public ObservableCollection<UserGroup> MyGroups
+        {
+            get
+            {
+                return _myGroups;
+            }
+            set
+            {
+                if (this._myGroups != value)
+                {
+                    this._myGroups = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
         public HomeViewModel()
         {
             User user = new User() { Alias = "montawk", ProfileImageLoc = "/Assets/Design/user.png", Name = "Chris Zorn" };
@@ -49,7 +66,12 @@ namespace Yookeroo.ViewModels
                 MyFeed.Add(new Question() { Author = user, Text = "I'm thinking about buying a Surface Pro. Do you think I should get one? Let me know why! Here is some extra text to see what it looks like", TimeStamp = DateTime.Now , NumResponses = 10});
             SuggestedPeople = new ObservableCollection<User>();
             for (int i = 0; i < 10; i++)
-                SuggestedPeople.Add(user);                
+                SuggestedPeople.Add(user);
+
+            UserGroup group = new UserGroup() { GroupName = "Family", ImageLoc = "/Assets/Design/IMG_0051.JPG" };
+            MyGroups = new ObservableCollection<UserGroup>();
+            for(int i = 0; i < 4; i++)
+                MyGroups.Add(group);
         }
     }
 }

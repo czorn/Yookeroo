@@ -14,17 +14,6 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"
     ApplicationBar = "{StaticResource GlobalAppBar}">
-	<phone:PhoneApplicationPage.Resources>
-		<DataTemplate x:Key="HeaderTemplate">
-			<Grid d:DesignWidth="482" d:DesignHeight="158">
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="family" Margin="10,75,0,-1" FontSize="64" FontWeight="Bold"/>
-				<StackPanel Orientation="Horizontal">
-					<Image Height="160" Width="250" Margin="0" HorizontalAlignment="Left"/>
-					<Image Width="250" HorizontalAlignment="Right" Margin="0"/>
-				</StackPanel>
-			</Grid>
-		</DataTemplate>
-	</phone:PhoneApplicationPage.Resources>
 
 	<phone:PhoneApplicationPage.DataContext>
 		<ViewModels:GroupViewModel/>
@@ -32,20 +21,28 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <phone:Panorama x:Name="Title" Loaded="Panorama_Loaded_1" FontSize="9.333" TitleTemplate="{StaticResource HeaderTemplate}">
-
-            <!--Panorama item one-->
-            <phone:PanoramaItem x:Name="feed" Header="feed">
-                <Grid>
-                	<phone:LongListSelector HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding GroupFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" />
+        <phone:Pivot x:Name="GroupPivot">
+            <phone:Pivot.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Design/greygeo1.png"/>
+            </phone:Pivot.Background>
+            <phone:Pivot.Title>
+                <Grid Margin="-24,-12,0,0">
+                    <Image Source="{Binding CurrentGroup.ImageLoc}" Width="Auto" Height="124" Stretch="UniformToFill"/>
+                    <TextBlock Text="{Binding CurrentGroup.GroupName}" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Height="103" Width="380" FontFamily="Segoe WP Semibold" />
                 </Grid>
-            </phone:PanoramaItem>
+            </phone:Pivot.Title>
+            <!--Panorama item one-->
+            <phone:PivotItem x:Name="feed" Header="feed">
+                <Grid>
+                	<phone:LongListSelector HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding GroupFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" Width="446" />
+                </Grid>
+            </phone:PivotItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem x:Name="people" Header="people">
+            <phone:PivotItem x:Name="people" Header="people">
 
-            </phone:PanoramaItem>
-        </phone:Panorama>
+            </phone:PivotItem>
+        </phone:Pivot>
     </Grid>
 
 </phone:PhoneApplicationPage>

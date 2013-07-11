@@ -238,6 +238,10 @@ namespace Yookeroo
             (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/UserPage.xaml", UriKind.Relative));
         }
 
+        private void OnGroupTapped(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/GroupPage.xaml", UriKind.Relative));
+        }
         private void OnAnswerQuestion_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/QuestionPage.xaml", UriKind.Relative));

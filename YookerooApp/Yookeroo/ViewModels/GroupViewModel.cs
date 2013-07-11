@@ -7,6 +7,23 @@ namespace Yookeroo.ViewModels
 {
     public class GroupViewModel : ViewModelBase
     {
+        private UserGroup _currentGroup;
+        public UserGroup CurrentGroup
+        {
+            get
+            {
+                return _currentGroup;
+            }
+            set
+            {
+                if (this._currentGroup != value)
+                {
+                    this._currentGroup = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
         private ObservableCollection<Question> _groupFeed;
         public ObservableCollection<Question> GroupFeed
         {
@@ -31,6 +48,7 @@ namespace Yookeroo.ViewModels
             for (int i = 0; i < 10; i++)
                 GroupFeed.Add(new Question() { Author = user, Text = "What color keyboard case should I get with my Surface?", TimeStamp = DateTime.Now });
 
+            CurrentGroup = new UserGroup() { GroupName = "Family", ImageLoc = "/Assets/Design/IMG_0051.JPG" };
         }
 
 

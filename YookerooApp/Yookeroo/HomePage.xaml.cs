@@ -31,5 +31,10 @@ namespace Yookeroo
         {
 
         }
+
+        private void LongListSelector_ItemRealized_1(object sender, ItemRealizationEventArgs e)
+        {
+
+        }
     }
 }

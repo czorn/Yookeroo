@@ -42,6 +42,23 @@ namespace Yookeroo.Models
             }
         }
 
+        private string _imageLoc;
+        public string ImageLoc
+        {
+            get
+            {
+                return _imageLoc;
+            }
+            set
+            {
+                if (this._imageLoc != value)
+                {
+                    this._imageLoc = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
         private List<User> _members;
         public List<User> Members
         {
