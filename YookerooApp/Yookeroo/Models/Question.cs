@@ -99,18 +99,18 @@ namespace Yookeroo.Models
         }
 
 
-        private DateTime _timeStamp;
-        public DateTime TimeStamp
+        private DateTime _timestamp;
+        public DateTime Timestamp
         {
             get
             {
-                return _timeStamp;
+                return _timestamp;
             }
             set
             {
-                if (this._timeStamp != value)
+                if (this._timestamp != value)
                 {
-                    this._timeStamp = value;
+                    this._timestamp = value;
                     this.NotifyPropertyChanged();
                 }
             }
@@ -150,6 +150,13 @@ namespace Yookeroo.Models
                     this.NotifyPropertyChanged();
                 }
             }
+        }
+
+        private bool _isAnswered = false;
+        public bool IsAnswered
+        {
+            get { return _isAnswered; }
+            set { _isAnswered = value; NotifyPropertyChanged(); }
         }
 
         public enum Types

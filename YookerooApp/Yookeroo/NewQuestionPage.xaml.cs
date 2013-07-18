@@ -132,6 +132,11 @@ namespace Yookeroo
             NavigationService.Navigate(new Uri("/ImagePage.xaml", UriKind.Relative));
         }
 
+        private void RemoveOption_Click(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
 
     }
 }

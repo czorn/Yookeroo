@@ -66,7 +66,7 @@ namespace Yookeroo.ViewModels
             User = new User() { Alias = "montawk", ProfileImageLoc = "/Assets/Design/user.png", Name = "Chris Zorn", Bio = "I’m your dope-ass divinity, trollin’ with My trinity, tossin’ top tweets in your immediate vicinity, flingin’ fly phrases from the fringes of infinity." };
             QuestionsAsked = new ObservableCollection<Question>();
             for (int i = 0; i < 10; i++)
-                QuestionsAsked.Add(new Question() { Author = User, Text = "I'm thinking about buying a Surface Pro. Do you think I should get one? Let me know why!", TimeStamp = DateTime.Now });
+                QuestionsAsked.Add(new Question() { Author = User, Text = "I'm thinking about buying a Surface Pro. Do you think I should get one? Let me know why!", Timestamp = DateTime.Now });
             Followers = new ObservableCollection<User>();
             for (int i = 0; i < 10; i++)
                 Followers.Add(User);

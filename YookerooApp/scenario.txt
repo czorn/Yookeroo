@@ -1,0 +1,20 @@
+Scenarios
+
+I post question: Should I buy this item?
+Live Tile increments
+Susie G. responds yes along with 10 followers
+I check my phone
+70% say yes
+
+
+Corporate
+	Coke Zero vs Cherry Coke?
+	
+	
+	
+	
+	
+Idea
+Notify me when 10 people have answered
+Show final decision of user asking question
+Tag people in questions
