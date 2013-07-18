@@ -6,8 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:Helper="clr-namespace:Yookeroo.Helper"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
-    >
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -34,7 +33,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" MinWidth="96" />
@@ -51,29 +50,10 @@
                 	</StackPanel>
                 	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="about 5 min ago" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="17.333" Margin="0,-5,0,0"/>
                 </StackPanel>
-                <TextBlock x:Name="QuestionText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" FontSize="14.667"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" MaxHeight ="44" FontSize="14.667"/>
                 <!-- <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3" Click="OnAnswerQuestion_Click"/> -->
             </Grid>
         </DataTemplate>
-
-    	<DataTemplate x:Key="MyQuestion">
-    		<Grid Margin="0,0,0,12">
-    			<Grid.RowDefinitions>
-    				<RowDefinition Height="*"/>
-    				<RowDefinition Height="*"/>
-    				<RowDefinition Height="Auto"/>
-    			</Grid.RowDefinitions>
-				<StackPanel Grid.Row="0" Orientation="Horizontal">
-					<TextBlock Text="{Binding NumResponses}" Style="{StaticResource JumpListStringStyle}" Foreground="{StaticResource PhoneAccentBrush}"/>
-					<TextBlock Text=" Responses" Style="{StaticResource JumpListStringStyle}" FontFamily="Segoe WP SemiLight"/>
-				</StackPanel>
-				<StackPanel Grid.Row="1" Orientation="Horizontal">
-					<TextBlock Text="Updated" Style="{StaticResource PhoneTextSubtleStyle}"/>
-					<TextBlock Text="{Binding TimeStamp}" Style="{StaticResource PhoneTextSubtleStyle}"/>
-				</StackPanel>
-				<TextBlock Grid.Row="2" Text="{Binding Text}" TextWrapping="Wrap" Margin="12,0,0,0" FontSize="14.677"/>
-    		</Grid>
-    	</DataTemplate>
 
         <DataTemplate x:Key="AnsweredQuestion">
             <Grid Margin="0,0,0,10">
@@ -144,35 +124,11 @@
                         <TextBlock TextWrapping="Wrap" Text="@" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
                         <TextBlock TextWrapping="Wrap" Text="{Binding Alias}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
                     </StackPanel>
-                    <TextBlock TextWrapping="Wrap" Text="{Binding Bio}" Foreground="#FFDDDDDD" Margin="0" FontSize="14.667"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Bio}" Foreground="#FFDDDDDD" Margin="0"/>
                 </StackPanel>
 
             </Grid>
         </DataTemplate>
-        
-        <DataTemplate x:Key="PanoramaHeader">
-            <Grid Margin="12,48,0,0">
-                <Image Source="Assets/Design/Askit.png" Margin="0,0,0,3" Height="127" Width="216"/>
-            </Grid>
-        </DataTemplate>
-        
-        <DataTemplate x:Key="TopicTile">
-            <Grid Width="400" Height="150" Margin="0,0,0,24" Tap="OnGroupTapped">
-        		<Image Width="400" Margin="0, 0, 0, 0" Source="{Binding ImageLoc}" Stretch="UniformToFill" Height="150" />
-        		<Rectangle Fill="#7F000000" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="400" Margin="0,94,0,0" StrokeThickness="0"/>
-        		<TextBlock TextWrapping="Wrap" Text="{Binding CategoryName}" Margin="12,90,0,0" FontFamily="{StaticResource PhoneFontFamilyLight}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-        	</Grid>
-        </DataTemplate>
-
-        <shell:ApplicationBar x:Key="GlobalAppBar" IsVisible="True" IsMenuEnabled="True"  ForegroundColor="White">
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="My Profile" Click="MyProfile_Click" />
-                <shell:ApplicationBarMenuItem Text="My Questions" Click="MyQuestions_Click" />
-            </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton IconUri="/Assets/Design/question.png" Text="Ask" Click="Ask_Click" />
-        </shell:ApplicationBar>
-
-
 
     </Application.Resources>
 

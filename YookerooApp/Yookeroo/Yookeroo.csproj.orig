@@ -26,7 +26,7 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
-    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,8 +102,6 @@
     <Compile Include="ImagePage.xaml.cs">
       <DependentUpon>ImagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\QuestionObject.cs" />
     <Compile Include="Models\UserGroup.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Models\ModelBase.cs" />
@@ -112,12 +110,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="GroupPage.xaml.cs">
       <DependentUpon>GroupPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="NewQuestionPage.xaml.cs">
       <DependentUpon>NewQuestionPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionPage.xaml.cs">
@@ -138,6 +132,9 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="GroupLiveTile.xaml.cs">
+      <DependentUpon>GroupLiveTile.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -153,9 +150,6 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="GroupPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ImagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,15 +158,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="QuestionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupLiveTile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,13 +181,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Design\Askit.png" />
-    <Content Include="Assets\Design\berkeley.jpg" />
-    <Content Include="Assets\Design\coffee-beans.jpg" />
     <Content Include="Assets\Design\greygeo1.png" />
     <Content Include="Assets\Design\IMG_0051.JPG" />
     <Content Include="Assets\Design\question.png" />
     <Content Include="Assets\Design\shoes.png" />
+<<<<<<< HEAD
+=======
+    <Content Include="Assets\Design\yookeroobg.png" />
+    <Content Include="Assets\Design\yookeroobg2-01.png" />
     <Content Include="Assets\Design\barcode.png" />
     <Content Include="Assets\Design\camera.png" />
     <Content Include="Assets\Design\cancel.png" />
@@ -204,19 +199,17 @@
     <Content Include="Assets\Design\send.png" />
     <Content Include="Assets\Design\shoes.png" />
     <Content Include="Assets\Design\question.png" />
-    <Content Include="Assets\Design\shopping.jpg" />
-    <Content Include="Assets\Design\swimming.jpg" />
-    <Content Include="Assets\Tiles\AskitTile-01.png" />
-    <Content Include="Assets\Tiles\AskitTile.png" />
-    <Content Include="Assets\Tiles\AskIt_Tile.png" />
-    <Content Include="Assets\Tiles\Askit_Tile_BW-01.png" />
     <Content Include="Assets\yookeroobg2-01.png" />
+>>>>>>> 95d3aa32f5a4bbc374c0c824c629e4b3e13161ab
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
-    <Resource Include="Assets\PanoramaBackground.png" />
+    <Content Include="yookeroobg2-01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\PanoramaBackground.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -248,9 +241,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Expression.Drawing" />
-    <Reference Include="Microsoft.Live, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Live.Controls, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>

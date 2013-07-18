@@ -102,7 +102,7 @@ namespace Yookeroo.ViewModels
         {
             // form the URI 
             UriBuilder fullUri = new UriBuilder("http://peleadecangrejos.cloudapp.net/AppHack/SocialGDSS/getfeed.php");
-            fullUri.Query = "user=" + alias;
+            fullUri.Query = "user=" + alias + "&c=" + DateTime.Now.Millisecond;
 
             // initialize a new WebRequest 
             HttpWebRequest feedRequest = (HttpWebRequest)WebRequest.Create(fullUri.Uri);
@@ -112,6 +112,7 @@ namespace Yookeroo.ViewModels
             feedState.AsyncRequest = feedRequest;
 
             // start the asynchronous request 
+            ShowProgressBar();
             feedRequest.BeginGetResponse(new AsyncCallback(HandleFeedResponse),
                 feedState);
         }
@@ -143,15 +144,21 @@ namespace Yookeroo.ViewModels
             {
                 MyFeed = tempFeed;
             });
+            HideProgresBar();
         }
 
 
         public HomeViewModel()
         {
-            Category sample = new Category() { CategoryName = "coffee", ImageLoc = "/Assets/Design/coffee-beans.jpg"};
+            Category coffee = new Category() { CategoryName = "coffee", ImageLoc = "/Assets/Design/coffee-beans.jpg"};
+            Category berkeley = new Category() { CategoryName = "berkeley", ImageLoc = "/Assets/Design/berkeley.jpg"};
+            Category swimming = new Category() { CategoryName = "swimming", ImageLoc = "/Assets/Design/swimming.jpg"};
+            Category fashion = new Category() { CategoryName = "fashion", ImageLoc = "/Assets/Design/shopping.jpg"};
             MyCategories = new ObservableCollection<Category>();
-            for ( int i = 0; i < 5; i ++) 
-                MyCategories.Add(sample);
+            MyCategories.Add(coffee);
+            MyCategories.Add(berkeley);
+            MyCategories.Add(swimming);
+            MyCategories.Add(fashion);
 
             CurrentUser = new User() { Alias = "LuisB", ProfileImageLoc = "/Assets/Design/user.png", Name = "Luis B" };
             SuggestedPeople = new ObservableCollection<User>();

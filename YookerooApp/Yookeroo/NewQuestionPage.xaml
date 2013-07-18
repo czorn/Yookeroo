@@ -27,6 +27,14 @@
             </StackPanel>
         </DataTemplate>
 
+        <DataTemplate x:Key="CategoryPickerItemTemplate">
+                <TextBlock Text="{Binding CategoryName}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="FullCategoryPickerItemTemplate">
+                <TextBlock Text="{Binding CategoryName}" Style="{StaticResource PhoneTextTitle2Style}" />
+        </DataTemplate>
+
         <!--<toolkit:ListPicker.FullModeItemTemplate>
             <DataTemplate>
                 <StackPanel>
@@ -38,10 +46,10 @@
     </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Margin="12,0" Width="456" Background="{StaticResource PhoneChromeBrush}">
-        <!--<Grid.Background>
+	<Grid x:Name="LayoutRoot" Margin="0" >
+        <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Design/greygeo1.png"/>
-        </Grid.Background>-->
+        </Grid.Background>
 
         <Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -65,6 +73,7 @@
                             <toolkit:PhoneTextBox Hint="What do you want to know?" AcceptsReturn="True" Text="{Binding DataContext.Question.Text, ElementName=LayoutRoot, Mode=TwoWay}" />
                                 <Image Source="{Binding DataContext.Question.ImageBitmap, ElementName=LayoutRoot}" Margin="120,12" Tap="Image_Tap"/>
                             <toolkit:ListPicker ItemsSource="{Binding DataContext.Types, ElementName=LayoutRoot}" x:Name="listPick" Margin="12,0" Header="Question Type" ItemTemplate="{StaticResource TypePickerItemTemplate}" SelectedIndex="{Binding DataContext.Question.Type, ElementName=LayoutRoot, Mode=TwoWay}" />
+                            <toolkit:ListPicker ItemsSource="{Binding DataContext.Categories, ElementName=LayoutRoot}" ItemTemplate="{StaticResource CategoryPickerItemTemplate}" Header="Category" FullModeItemTemplate="{StaticResource FullCategoryPickerItemTemplate}" FullModeHeader="CATEGORIES"/>
                             <TextBlock Visibility="{Binding DataContext.Question.Type, ElementName=LayoutRoot, Converter={StaticResource QuestionTypeToVisibility}}" TextWrapping="Wrap" Text="Options" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,12,12,0"/>
                             </StackPanel>
                         </DataTemplate>

@@ -55,15 +55,22 @@ namespace Yookeroo.ViewModels
 
         protected void ShowProgressBar()
         {
-            ProgressBarVisibility = Visibility.Visible;
-            ProgressBarIsIndeterminate = true;
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressBarVisibility = Visibility.Visible;
+                ProgressBarIsIndeterminate = true;
+            });
         }
 
         protected void HideProgresBar()
         {
-            ProgressBarVisibility = Visibility.Collapsed;
-            ProgressBarIsIndeterminate = false;
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressBarVisibility = Visibility.Collapsed;
+                ProgressBarIsIndeterminate = false;
+            });
         }
+
 
         protected void Navigate(Uri uri)
         {

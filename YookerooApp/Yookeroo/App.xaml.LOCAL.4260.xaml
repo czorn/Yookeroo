@@ -1,12 +1,11 @@
-﻿<Application 
-    x:Class="Yookeroo.App"
+﻿<Application
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:Helper="clr-namespace:Yookeroo.Helper"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
 	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+    x:Class="Yookeroo.App"
     >
 
     <!--Application Resources-->
@@ -20,13 +19,6 @@
         </Style>
         
         <local:LocalizedStrings xmlns:local="clr-namespace:Yookeroo" x:Key="LocalizedStrings"/>
-
-        <!-- Converters-->
-        <Helper:QuestionTypeDescriptionToHint x:Key="QuestionTypeDescriptionToHint"/>
-        <Helper:QuestionTypeDescriptionToName x:Key="QuestionTypeDescriptionToName"/>
-        <Helper:QuestionTypeToVisibility x:Key="QuestionTypeToVisibility"/>
-        <Helper:QuestionToOptions x:Key="QuestionToOptions"/>
-        <Helper:QuestionToImageSource x:Key="QuestionToImageSource"/>
 
 
         <DataTemplate x:Key="UnAnsweredQuestion">
@@ -51,7 +43,7 @@
                 	</StackPanel>
                 	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="about 5 min ago" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="17.333" Margin="0,-5,0,0"/>
                 </StackPanel>
-                <TextBlock x:Name="QuestionText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" FontSize="14.667"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" FontSize="14.667"/>
                 <!-- <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3" Click="OnAnswerQuestion_Click"/> -->
             </Grid>
         </DataTemplate>
@@ -149,28 +141,16 @@
 
             </Grid>
         </DataTemplate>
-        
-        <DataTemplate x:Key="PanoramaHeader">
-            <Grid Margin="12,48,0,0">
-                <Image Source="Assets/Design/Askit.png" Margin="0,0,0,3" Height="127" Width="216"/>
-            </Grid>
-        </DataTemplate>
-        
-        <DataTemplate x:Key="TopicTile">
-            <Grid Width="400" Height="150" Margin="0,0,0,24" Tap="OnGroupTapped">
-        		<Image Width="400" Margin="0, 0, 0, 0" Source="{Binding ImageLoc}" Stretch="UniformToFill" Height="150" />
-        		<Rectangle Fill="#7F000000" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="400" Margin="0,94,0,0" StrokeThickness="0"/>
-        		<TextBlock TextWrapping="Wrap" Text="{Binding CategoryName}" Margin="12,90,0,0" FontFamily="{StaticResource PhoneFontFamilyLight}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-        	</Grid>
-        </DataTemplate>
 
-        <shell:ApplicationBar x:Key="GlobalAppBar" IsVisible="True" IsMenuEnabled="True"  ForegroundColor="White">
+        <shell:ApplicationBar x:Key="GlobalAppBar" IsVisible="True" IsMenuEnabled="True" BackgroundColor="{StaticResource PhoneAccentColor}" ForegroundColor="White">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="My Profile" Click="MyProfile_Click" />
                 <shell:ApplicationBarMenuItem Text="My Questions" Click="MyQuestions_Click" />
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton IconUri="/Assets/Design/question.png" Text="Ask" Click="Ask_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Settings" Click="Settings_Click" />
         </shell:ApplicationBar>
+
 
 
 

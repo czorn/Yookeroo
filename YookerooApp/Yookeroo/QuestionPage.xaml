@@ -52,8 +52,6 @@
                     	<toolkit:LongListMultiSelector HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     </StackPanel>
 
-            		
-					
             	</Grid>
             </phone:PivotItem>
 

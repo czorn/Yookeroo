@@ -22,7 +22,13 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot" Background="#FF222222" >
-        <phone:Panorama TitleTemplate="{StaticResource PanoramaHeader}">
+        <phone:Panorama>
+            <phone:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,190,0,0">
+                    </Grid>
+                </DataTemplate>
+            </phone:Panorama.TitleTemplate>
             <phone:Panorama.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Design/greygeo1.png"/>
             </phone:Panorama.Background>
@@ -71,6 +77,11 @@
             </phone:PanoramaItem>
             
         </phone:Panorama>
+        <Grid Margin="0,25,0,0">
+            <Image VerticalAlignment="Top" Source="Assets/Design/Askit.png" Margin="0,0,0,3" Height="127" Width="216"/>
+        </Grid>
+        
+        <ProgressBar Visibility="{Binding ProgressBarVisibility}"> </ProgressBar>
     </Grid>
 
 </phone:PhoneApplicationPage>
