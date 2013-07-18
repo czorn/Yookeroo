@@ -37,7 +37,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" MinWidth="96" />
@@ -54,10 +54,29 @@
                 	</StackPanel>
                 	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="about 5 min ago" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="17.333" Margin="0,-5,0,0"/>
                 </StackPanel>
-                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" MaxHeight ="44" FontSize="14.667"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"  Tap="OnAnswerQuestion_Tap" Height="Auto" FontSize="14.667"/>
                 <!-- <Button Content="Answer" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" BorderThickness="3" Click="OnAnswerQuestion_Click"/> -->
             </Grid>
         </DataTemplate>
+
+    	<DataTemplate x:Key="MyQuestion">
+    		<Grid Margin="0,0,0,12">
+    			<Grid.RowDefinitions>
+    				<RowDefinition Height="*"/>
+    				<RowDefinition Height="*"/>
+    				<RowDefinition Height="Auto"/>
+    			</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" Orientation="Horizontal">
+					<TextBlock Text="{Binding NumResponses}" Style="{StaticResource JumpListStringStyle}" Foreground="{StaticResource PhoneAccentBrush}"/>
+					<TextBlock Text=" Responses" Style="{StaticResource JumpListStringStyle}" FontFamily="Segoe WP SemiLight"/>
+				</StackPanel>
+				<StackPanel Grid.Row="1" Orientation="Horizontal">
+					<TextBlock Text="Updated" Style="{StaticResource PhoneTextSubtleStyle}"/>
+					<TextBlock Text="{Binding TimeStamp}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+				</StackPanel>
+				<TextBlock Grid.Row="2" Text="{Binding Text}" TextWrapping="Wrap" Margin="12,0,0,0" FontSize="14.677"/>
+    		</Grid>
+    	</DataTemplate>
 
         <DataTemplate x:Key="AnsweredQuestion">
             <Grid Margin="0,0,0,10">
@@ -128,11 +147,23 @@
                         <TextBlock TextWrapping="Wrap" Text="@" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
                         <TextBlock TextWrapping="Wrap" Text="{Binding Alias}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0"/>
                     </StackPanel>
-                    <TextBlock TextWrapping="Wrap" Text="{Binding Bio}" Foreground="#FFDDDDDD" Margin="0"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Bio}" Foreground="#FFDDDDDD" Margin="0" FontSize="14.667"/>
                 </StackPanel>
 
             </Grid>
         </DataTemplate>
+
+        <shell:ApplicationBar x:Key="GlobalAppBar" IsVisible="True" IsMenuEnabled="True" BackgroundColor="{StaticResource PhoneAccentColor}" ForegroundColor="White">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="My Profile" Click="MyProfile_Click" />
+                <shell:ApplicationBarMenuItem Text="My Questions" Click="MyQuestions_Click" />
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Design/question.png" Text="Ask" Click="Ask_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Settings" Click="Settings_Click" />
+        </shell:ApplicationBar>
+
+
+
 
     </Application.Resources>
 
