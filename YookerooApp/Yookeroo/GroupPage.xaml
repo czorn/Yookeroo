@@ -28,7 +28,7 @@
             <phone:Pivot.Title>
                 <Grid Margin="-24,-12,0,0">
                     <Image Source="{Binding CurrentGroup.ImageLoc}" Width="Auto" Height="124" Stretch="UniformToFill"/>
-                    <TextBlock Text="{Binding CurrentGroup.GroupName}" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Height="103" Width="380" FontFamily="Segoe WP Semibold" />
+                    <TextBlock Text="{Binding CurrentGroup.GroupName}" Margin="24,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="62" Height="103" Width="380" FontFamily="Segoe WP Semilight" />
                 </Grid>
             </phone:Pivot.Title>
             <!--Panorama item one-->
@@ -40,7 +40,9 @@
 
             <!--Panorama item two-->
             <phone:PivotItem x:Name="people" Header="people">
-
+                <Grid>
+                    <phone:LongListSelector HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding GroupFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" Width="446" />
+                </Grid>
             </phone:PivotItem>
         </phone:Pivot>
     </Grid>

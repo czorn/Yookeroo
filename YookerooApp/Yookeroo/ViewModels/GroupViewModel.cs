@@ -48,7 +48,7 @@ namespace Yookeroo.ViewModels
             for (int i = 0; i < 10; i++)
                 GroupFeed.Add(new Question() { Author = user, Text = "What color keyboard case should I get with my Surface?", TimeStamp = DateTime.Now });
 
-            CurrentGroup = new UserGroup() { GroupName = "Family", ImageLoc = "/Assets/Design/IMG_0051.JPG" };
+            CurrentGroup = new UserGroup() { GroupName = "exotic pets", ImageLoc = "/Assets/Design/IMG_0051.JPG" };
         }
 
 

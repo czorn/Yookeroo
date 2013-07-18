@@ -30,24 +30,27 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="question">
 				<Grid>
-                    <phone:LongListSelector ItemsSource="{Binding x}">
-            			<phone:LongListSelector.ListHeaderTemplate>
-            				<DataTemplate>
-            				    <StackPanel>
-            						<ContentPresenter Content="{Binding DataContext.User, ElementName=LayoutRoot}" ContentTemplate="{StaticResource UserList}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            						<TextBlock TextWrapping="Wrap" Text="{Binding DataContext.Question.Text, ElementName=LayoutRoot}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0"/>
-            						<Image Source="/Assets/Design/shoes.png" Margin="0,10"/>
-            						<TextBlock Text="4:00PM - June 11, 2013" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            					</StackPanel>
-						    </DataTemplate>
-						</phone:LongListSelector.ListHeaderTemplate>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="0">
+                    	<phone:LongListSelector ItemsSource="{Binding x}" Height="531" Margin="0,0,-356,0" Width="456">
+                    		<phone:LongListSelector.ListHeaderTemplate>
+                    			<DataTemplate>
+                    				<StackPanel>
+                    					<ContentPresenter Content="{Binding DataContext.User, ElementName=LayoutRoot}" ContentTemplate="{StaticResource UserList}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    					<TextBlock TextWrapping="Wrap" Text="{Binding DataContext.Question.Text, ElementName=LayoutRoot}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                    					<Image Source="/Assets/Design/shoes.png" Margin="0,10"/>
+                    					<TextBlock Text="4:00PM - June 11, 2013" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    				</StackPanel>
+                    			</DataTemplate>
+                    		</phone:LongListSelector.ListHeaderTemplate>
 
-						<phone:LongListSelector.ItemTemplate>
-							<DataTemplate>
-								<TextBlock Text="aa" />
-							</DataTemplate>
-						</phone:LongListSelector.ItemTemplate>
-					</phone:LongListSelector>
+                    		<phone:LongListSelector.ItemTemplate>
+                    			<DataTemplate>
+                    				<TextBlock Text="aa" />
+                    			</DataTemplate>
+                    		</phone:LongListSelector.ItemTemplate>
+                    	</phone:LongListSelector>
+                    	<toolkit:LongListMultiSelector HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </StackPanel>
 
             		
 					
