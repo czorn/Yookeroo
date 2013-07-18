@@ -69,7 +69,7 @@ namespace Yookeroo
 
         void SubmitQuestionButton_Click(object sender, EventArgs e)
         {
-            
+                (DataContext as NewQuestionViewModel).SubmitQuestionButton_Click(sender,e);
         }
 
         private void AddOption_Click(object sender, RoutedEventArgs e)

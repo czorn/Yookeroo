@@ -137,7 +137,7 @@ namespace Yookeroo.ViewModels
             System.Diagnostics.Debug.WriteLine("feed has " + feed.ToString() + "items");
             foreach (QuestionObject q in feed)
             {
-               tempFeed.Add(new Question() { Author = CurrentUser, Text = q.question_text, TimeStamp = DateTime.Parse(q.question_timestamp.date) });
+               tempFeed.Add(new Question() { Author = CurrentUser, Text = q.question_text, Timestamp = DateTime.Parse(q.question_timestamp.date) });
             }
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -168,7 +168,7 @@ namespace Yookeroo.ViewModels
 
             /****** DEAD CODE *******/
             /*for(int i = 0; i < 10; i++)
-                MyFeed.Add(new Question() { Author = user, Text = "I'm thinking about buying a Surface Pro. Do you think I should get one? Let me know why! Here is some extra text to see what it looks like", TimeStamp = DateTime.Now , NumResponses = 10});*/
+                MyFeed.Add(new Question() { Author = user, Text = "I'm thinking about buying a Surface Pro. Do you think I should get one? Let me know why! Here is some extra text to see what it looks like", Timestamp:w = DateTime.Now , NumResponses = 10});*/
 
             /*UserGroup group = new UserGroup() { GroupName = "Family", ImageLoc = "/Assets/Design/IMG_0051.JPG" };
             MyGroups = new ObservableCollection<UserGroup>();

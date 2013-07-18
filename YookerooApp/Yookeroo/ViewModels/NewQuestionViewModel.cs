@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Yookeroo.Models;
@@ -71,6 +72,22 @@ namespace Yookeroo.ViewModels
             Categories.Add(new Category() { CategoryName = "Events" });
             Categories.Add(new Category() { CategoryName = "Sports" });
             Categories.Add(new Category() { CategoryName = "Music" });
+        }
+
+        internal void SubmitQuestionButton_Click(object sender, EventArgs e)
+        {            String hostString = "http://peleadecangrejos.cloudapp.net/AppHack/SocialGDSS/postquestion.php?";
+            string urlString = String.Format("user={0}&question={1}&category={2}&timestamp={3}&type={4}&options={5}", "LuisB", Question.Text, "Shopping", Question.Timestamp.ToString(), Question.Type + 500, "1;2;3") ;
+            urlString = "user=LuisB" + "&question=" + HttpUtility.UrlEncode(Question.Text) + "&category=Shopping" + "&timestamp=2013" + "&type=501" + "&options=asdf";
+            urlString = hostString + urlString;
+
+            ZornWinPhone.WebHelper.GetRequest(urlString, (result) =>
+            {
+                String myString = ZornWinPhone.WebHelper.AsyncResultToString(result);
+                App.RootFrame.Dispatcher.BeginInvoke(() =>
+            {
+                GoBack();
+            });
+            });
         }
     }
 }
