@@ -6,8 +6,8 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:Helper="clr-namespace:Yookeroo.Helper"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
-    >
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:zwp8C="clr-namespace:ZornWinPhone8.Converters;assembly=ZornWinPhone8">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -27,6 +27,9 @@
         <Helper:QuestionTypeToVisibility x:Key="QuestionTypeToVisibility"/>
         <Helper:QuestionToOptions x:Key="QuestionToOptions"/>
         <Helper:QuestionToImageSource x:Key="QuestionToImageSource"/>
+        <zwp8C:BoolToVisibility x:Key="BoolToVisibility"/>
+        <zwp8C:BoolInverseToVisibility x:Key="BoolInverseToVisibility"/>
+        
 
 
         <DataTemplate x:Key="UnAnsweredQuestion">
@@ -69,7 +72,7 @@
 				</StackPanel>
 				<StackPanel Grid.Row="1" Orientation="Horizontal">
 					<TextBlock Text="Updated" Style="{StaticResource PhoneTextSubtleStyle}"/>
-					<TextBlock Text="{Binding TimeStamp}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+					<TextBlock Text="{Binding Timestamp}" Style="{StaticResource PhoneTextSubtleStyle}"/>
 				</StackPanel>
 				<TextBlock Grid.Row="2" Text="{Binding Text}" TextWrapping="Wrap" Margin="12,0,0,0" FontSize="14.677"/>
     		</Grid>

@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\QuestionObject.cs" />
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\UserGroup.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Models\ModelBase.cs" />
@@ -254,6 +255,12 @@
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ZornWinPhone">
+      <HintPath>..\..\ZornWinPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="ZornWinPhone8">
+      <HintPath>..\..\..\..\..\git\ZornWinPhone8\ZornWinPhone8\Bin\x86\Debug\ZornWinPhone8.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
