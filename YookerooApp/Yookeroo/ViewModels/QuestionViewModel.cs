@@ -56,7 +56,7 @@ namespace Yookeroo.ViewModels
                 {
                     "Yes", "No"    
                 },
-                Author = user, ImageLoc = "http://a1.twimg.com/profile_images/85346276/Purple_Converse_Shoes_by_UndineCG_bigger.jpg", Text = "My name is... Shake-Zula. The mic-rula, The old schoolah, Ya wanna trip? I'll bring it to ya. Frylock and I'm on top, Rock you like a cop Meatwad you up next with your knock-knock. Meatwad make the money, see. Meatwad get the honeys, G. Drivin in my car, livin' like a star. Ice on my fingers and my toes and I'm a Taurus. What?\nShould I buy these shoes?", Timestamp = DateTime.Now };
+                Author = user, ImageLoc = "http://a1.twimg.com/profile_images/85346276/Purple_Converse_Shoes_by_UndineCG_bigger.jpg", Text = "I'm looking to replace my shoes. What do you think about this pair?", Timestamp = DateTime.Now };
             
             Answers = new ObservableCollection<Answer>();
             for (int i = 0; i < 20; i++)

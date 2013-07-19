@@ -63,7 +63,7 @@ namespace Yookeroo.ViewModels
 
         public UserViewModel()
         {
-            User = new User() { Alias = "montawk", ProfileImageLoc = "/Assets/Design/user.png", Name = "Chris Zorn", Bio = "I’m your dope-ass divinity, trollin’ with My trinity, tossin’ top tweets in your immediate vicinity, flingin’ fly phrases from the fringes of infinity." };
+            User = new User() { Alias = "LuisB", ProfileImageLoc = "https://profile-a.xx.fbcdn.net/hprofile-prn1/c40.40.502.502/s320x320/528328_10151694304239705_1563644218_n.jpg", Name = "Luis Bosquez", Bio = "Hi, my name is Luis and I'm currently a Program Manager intern at Microsoft. I like technology, music, sports and long walks on the beach AMA" };
             QuestionsAsked = new ObservableCollection<Question>();
             for (int i = 0; i < 10; i++)
                 QuestionsAsked.Add(new Question() { Author = User, Text = "I'm thinking about buying a Surface Pro. Do you think I should get one? Let me know why!", Timestamp = DateTime.Now });

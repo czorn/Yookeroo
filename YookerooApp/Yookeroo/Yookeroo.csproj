@@ -103,6 +103,7 @@
       <DependentUpon>ImagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\UserFeedObject.cs" />
     <Compile Include="Models\QuestionObject.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\UserGroup.cs" />

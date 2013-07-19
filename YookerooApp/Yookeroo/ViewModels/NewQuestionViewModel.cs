@@ -62,7 +62,7 @@ namespace Yookeroo.ViewModels
 
         public NewQuestionViewModel()
         {
-            User user = new User() { Alias = "montawk", ProfileImageLoc = "/Assets/Design/user.png", Name = "Chris Zorn", Bio = "I’m your dope-ass divinity, trollin’ with My trinity, tossin’ top tweets in your immediate vicinity, flingin’ fly phrases from the fringes of infinity." };
+            User user = new User() { Alias = "LuisB", ProfileImageLoc = "https://profile-a.xx.fbcdn.net/hprofile-prn1/c40.40.502.502/s320x320/528328_10151694304239705_1563644218_n.jpg", Name = "Chris Zorn", Bio = "I’m your dope-ass divinity, trollin’ with My trinity, tossin’ top tweets in your immediate vicinity, flingin’ fly phrases from the fringes of infinity." };
             Question = new Question() { Author = user };
             Types = new ObservableCollection<QuestionTypeDescription>(Yookeroo.Models.Question.TypeDescriptions);
             Categories = new ObservableCollection<Category>();
@@ -75,7 +75,8 @@ namespace Yookeroo.ViewModels
         }
 
         internal void SubmitQuestionButton_Click(object sender, EventArgs e)
-        {            String hostString = "http://peleadecangrejos.cloudapp.net/AppHack/SocialGDSS/postquestion.php?";
+        {
+            String hostString = "http://peleadecangrejos.cloudapp.net/AppHack/SocialGDSS/postquestion.php?";
             string urlString = String.Format("user={0}&question={1}&category={2}&timestamp={3}&type={4}&options={5}", "LuisB", Question.Text, "Shopping", Question.Timestamp.ToString(), Question.Type + 500, "1;2;3") ;
             urlString = "user=LuisB" + "&question=" + HttpUtility.UrlEncode(Question.Text) + "&category=Shopping" + "&timestamp=2013" + "&type=501" + "&options=asdf";
             urlString = hostString + urlString;

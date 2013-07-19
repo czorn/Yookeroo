@@ -25,6 +25,8 @@ namespace Yookeroo.Models
     public class QuestionObject
     {
         public string __invalid_name__0 { get; set; }
+        public string user_handle { get; set; }
+        public string user_imageLink { get; set; }
         public string question_text { get; set; }
         public string __invalid_name__1 { get; set; }
         public string question_imagePath { get; set; }

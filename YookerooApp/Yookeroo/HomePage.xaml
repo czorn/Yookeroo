@@ -44,7 +44,7 @@
                     <!--<StackPanel>-->
                         <!--<Button>Ask a Question</Button>-->
                         <!--<TextBlock Margin="10,0,0,0" FontSize="{StaticResource JumpListStringFontSize}">Feed</TextBlock>-->
-                        <phone:LongListSelector ItemsSource="{Binding MyFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" Margin="0,0,0,26"/>
+                        <phone:LongListSelector ItemsSource="{Binding UserFeed}" ItemTemplate="{StaticResource UnAnsweredQuestion}" Margin="0,0,0,26"/>
                     <!--</StackPanel>-->
                 </Grid>
             </phone:PanoramaItem>

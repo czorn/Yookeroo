@@ -48,6 +48,25 @@ namespace Yookeroo.ViewModels
             }
         }
 
+
+        private ObservableCollection<Question> _userFeed;
+        public ObservableCollection<Question> UserFeed
+        {
+            get
+            {
+                return _userFeed;
+            }
+            set
+            {
+                if (this._userFeed != value)
+                {
+                    this._userFeed = value;
+                    this.NotifyPropertyChanged();
+                }
+            }
+        }
+
+
         private ObservableCollection<User> _suggestedPeople;
         public ObservableCollection<User> SuggestedPeople
         {
@@ -147,6 +166,55 @@ namespace Yookeroo.ViewModels
             HideProgresBar();
         }
 
+        public void GetUserFeed(string alias)
+        {
+            // form the URI 
+            UriBuilder fullUri = new UriBuilder("http://peleadecangrejos.cloudapp.net/AppHack/SocialGDSS/getuserfeed.php");
+            fullUri.Query = "user=" + alias + "&c=" + DateTime.Now.Millisecond;
+
+            // initialize a new WebRequest 
+            HttpWebRequest feedRequest = (HttpWebRequest)WebRequest.Create(fullUri.Uri);
+
+            // set up the state object for the async request 
+            FeedUpdateState feedState = new FeedUpdateState();
+            feedState.AsyncRequest = feedRequest;
+
+            // start the asynchronous request 
+            ShowProgressBar();
+            feedRequest.BeginGetResponse(new AsyncCallback(HandleUserFeedResponse),
+                feedState);
+        }
+
+        public void HandleUserFeedResponse(IAsyncResult asyncResult)
+        {
+            // get the state information 
+            FeedUpdateState feedState = (FeedUpdateState)asyncResult.AsyncState;
+            HttpWebRequest feedRequest = (HttpWebRequest)feedState.AsyncRequest;
+
+            // end the async request 
+            feedState.AsyncResponse = (HttpWebResponse)feedRequest.EndGetResponse(asyncResult);
+
+            // get the stream containing the response from the async call 
+            Stream streamResult;
+            streamResult = feedState.AsyncResponse.GetResponseStream();
+            //System.Diagnostics.Debug.WriteLine(streamResult.Read.ToString());
+            List<QuestionObject> feed = new List<QuestionObject>();
+            ObservableCollection<Question> tempFeed = new ObservableCollection<Question>();
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(List<QuestionObject>));
+            feed = (List<QuestionObject>)serializer.ReadObject(streamResult);
+            System.Diagnostics.Debug.WriteLine("feed has " + feed.ToString() + "items");
+            foreach (QuestionObject q in feed)
+            {
+                User tempUser = new User() { Alias = q.user_handle, Name = q.user_handle, ProfileImageLoc = q.user_imageLink };
+               tempFeed.Add(new Question() { Author = tempUser, Text = q.question_text, Timestamp = DateTime.Parse(q.question_timestamp.date) });
+            }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+               UserFeed = tempFeed;
+            });
+            HideProgresBar();
+        }
 
         public HomeViewModel()
         {
@@ -160,11 +228,12 @@ namespace Yookeroo.ViewModels
             MyCategories.Add(swimming);
             MyCategories.Add(fashion);
 
-            CurrentUser = new User() { Alias = "LuisB", ProfileImageLoc = "/Assets/Design/user.png", Name = "Luis B" };
+            CurrentUser = new User() { Alias = "LuisB", ProfileImageLoc = "https://profile-a.xx.fbcdn.net/hprofile-prn1/c40.40.502.502/s320x320/528328_10151694304239705_1563644218_n.jpg", Name = "Luis B" };
             SuggestedPeople = new ObservableCollection<User>();
             for (int i = 0; i < 10; i++)
                 SuggestedPeople.Add(CurrentUser);
             GetFeed(CurrentUser.Alias);
+            GetUserFeed(CurrentUser.Alias);
 
             /****** DEAD CODE *******/
             /*for(int i = 0; i < 10; i++)
